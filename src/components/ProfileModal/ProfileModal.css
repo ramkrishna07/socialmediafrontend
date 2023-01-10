@@ -1,0 +1,19 @@
+.mantine-Paper-root{
+    background-color: var(--appbg);
+}
+.infoForm{
+    background-color: var(--cardColor);
+}
+.infoForm h3{
+    color: var(--appcolor);
+}
+.infoInput{
+    background-color: var(--inputbg);
+    color: var(--inputcolor);
+}
+.imageInput{
+    color: var(--appcolor);
+}
+svg{
+    color: var(--appcolor);
+}

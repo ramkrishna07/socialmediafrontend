@@ -1,0 +1,53 @@
+.Posts-profile{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: scroll;
+}
+.Posts{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: scroll;
+}
+
+@media (max-width:855px){
+    .Posts{
+        width: 95%;
+    }
+}
+@media (max-width:790px){
+    .Posts{
+        width: 90%;
+    }
+}
+@media (max-width:720px){
+    .Posts{
+        width: 80%;
+    }
+}
+@media (max-width:630px){
+    .Posts{
+        width: 70%;
+    }
+}
+@media (max-width:560px){
+    .Posts{
+        width: 60%;
+    }
+}
+@media (max-width:490px){
+    .Posts{
+        width: 50%;
+    }
+}
+@media (max-width:410px){
+    .Posts{
+        width: 40%;
+    }
+}
+@media (max-width:335px){
+    .Posts{
+        width: 33%;
+    }
+}

@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+.light-theme{
+  --yellow:#f5c32c;
+  --orange:#4CB356;
+  --appcolor:#242d49;
+  --gray:rgba(36,45,73,0.65);
+  --profileShadow:0px 4px 17px 2px rgba(0,0,0,0.25);
+  --hrColor:#cfcdcd;
+  --cardColor:rgba(255,255,255,0.64);
+  --buttonBg:linear-gradient(98.63deg,#25f9a4 0%,#8bf816 100%);
+  --buttonText:white;
+  /* --buttonBg:linear-gradient(98.63deg,#f9a225 0%,#f95f35 100%); */
+  --appbg:#f3f3f3;
+  --inputbg:rgba(40,52,62,0.07);
+  --inputcolor:rgba(36,45,73,0.65);
+  --photo:#4CB356;
+  --video:#4A4EB7;
+  --location:#EF5757;
+  --shedule:#E1AE4A;
 }
-
-.App-logo {
-  height: 40vmin;
+.dark-theme{
+  --yellow:#f5c32c;
+  --orange:#04fc43;
+  --appcolor:#e9e9e9;
+  --gray:rgba(214, 220, 241, 0.65);
+  --profileShadow:0px 4px 17px 2px rgba(0,0,0,0.25);
+  --hrColor:#e9e9e9;
+  --cardColor:#222222;
+  --buttonBg:linear-gradient(98.63deg,#25f9a4 0%,#8bf816 100%);
+  --buttonText:white;
+  /* --buttonBg:linear-gradient(98.63deg,#f9a225 0%,#f95f35 100%); */
+  --appbg:#151515;
+  --inputbg:#393939;
+  --inputcolor:rgba(214, 220, 241, 0.65);
+  --photo:#4CB356;
+  --video:#4A4EB7;
+  --location:#EF5757;
+  --shedule:#E1AE4A;
+}
+.App{
+  overflow: hidden;
+  color: var(--appcolor);
+  background: var(--appbg);
+  padding: 1rem 1rem;
+}
+.blur{
+  position: absolute;
+  width: 22rem;
+  height: 14rem;
+  border-radius: 50%;
+  background: #a6ddf0;
+  filter: blur(72px);
+}
+.button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--buttonText);
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--buttonBg);
+  transition: all 100ms ease-out;
+}
+.button:hover{
+  cursor: pointer;
+  color: var(--orange);
+  background: transparent;
+  border: 2px solid var(--orange);
+  transition: all 0.3s ease;
+}
+.button:disabled{
+  background: silver;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+::-webkit-scrollbar{
+  display: none;
 }

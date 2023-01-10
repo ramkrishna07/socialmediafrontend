@@ -1,0 +1,130 @@
+.Navbar{
+    position: relative;
+    display: grid;
+    grid-template-columns: 20rem auto 20rem;
+    gap: 1rem;
+}
+.LogoSearch{
+    display: flex;
+    gap: 0.75rem;
+
+
+}
+.LogoSearch img{
+    width: 6.5rem;
+}
+.Search{
+    display: flex;
+    background-color: var(--inputbg);
+    color: var(--inputcolor);
+    border-radius: 10px;
+    padding: 5px;
+    z-index: 1;
+}
+
+.after{
+    display: none;
+}
+.Search input{
+    background-color: var(--inputbg);
+    color: var(--inputcolor);
+    border: none;
+    outline: none;
+}
+.after input{
+    background-color: rgb(212, 225, 238);
+}
+.s-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: linear-gradient(106.23deg,#f99827,#f95f35 100%); */
+    background: var(--orange);
+    border-radius: 5px;
+    padding: 4px;
+    color: white;
+}
+.s-icon:hover{
+    cursor: pointer;
+}
+
+.navOptions{
+    display: flex;
+    justify-content: space-around;
+    /* gap: 2rem; */
+    position: relative;
+}
+.option{
+    display: flex;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+.option:hover{
+    cursor: pointer;
+}
+
+.icons{
+    width: 1.5rem;
+    height: 1.5rem;
+    /* color: linear-gradient(106.23deg,#f99827,#f95f35 100%); */
+    color: var(--orange);
+    cursor: pointer;
+}
+.plusIcon{
+    display: none;
+    margin-top: 0.6rem;
+    margin-left: 4rem;
+}
+
+
+@media (max-width:1160px){
+    .navOptions{
+        justify-content: space-between;
+        gap: 44%;
+    }
+}
+
+@media (max-width:670px){
+    .Search{
+        display: none;
+    }
+    .after{
+        display: flex;
+    }
+    .plusIcon{
+        display: block;
+        position: relative;
+    }
+    
+}
+@media (max-width:630px){
+    .navOptions{
+        gap: 35%;
+        right: 30%;
+    }
+}
+@media (max-width:500px){
+    .plusIcon{
+        right: 20%;
+    }
+    .navOptions{
+        right: 75%;
+    }
+}
+@media (max-width:440px){
+    
+    .navOptions{
+        right: 100%;
+        gap: 15%;
+    }
+}
+@media (max-width:350px){
+    .navOptions{
+        right: 110%;
+        gap: 5%;
+    }
+}

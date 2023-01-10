@@ -1,0 +1,29 @@
+.RightSide{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+/* .navIcons{
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-between;
+}
+.navIcons>img{
+    height: 1.5rem;
+    width: 1.5rem;
+} */
+.r-button{
+    height: 3rem;
+    width: 80%;
+    align-self: center;
+}
+/* .navIcons>a>img{
+    height: 1.5rem;
+    width: 1.5rem;
+} */
+
+@media (max-width:1160px){
+    .RightSide{
+        display: none;
+    }
+}

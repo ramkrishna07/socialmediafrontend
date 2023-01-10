@@ -1,0 +1,62 @@
+.Profile{
+    display: grid;
+    gap: 1rem;
+}
+.Profile-content{
+    position: relative;
+    display: grid;
+    grid-template-columns: 20rem auto 18rem;
+    gap: 1rem;
+}
+.Profile-center{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+@media (max-width:1160px){
+    .Profile-content{
+        grid-template-columns: 20rem auto 0;
+    } 
+}
+@media (max-width:850px){
+    .Profile-content{
+        grid-template-columns: 0 auto 0;
+    } 
+}
+@media (max-width:790px){
+    .Profile-content{
+        width: 90%;
+    }
+}
+@media (max-width:720px){
+    .Profile-content{
+        width: 80%;
+    }
+}
+@media (max-width:630px){
+    .Profile-content{
+        width: 70%;
+    }
+}
+@media (max-width:560px){
+    .Profile-content{
+        width: 60%;
+    }
+}
+@media (max-width:490px){
+    .Profile-content{
+        width: 50%;
+    }
+}
+@media (max-width:410px){
+    .Profile-content{
+        width: 40%;
+    }
+}
+@media (max-width:335px){
+    .Profile-content{
+        width: 33%;
+    }
+}

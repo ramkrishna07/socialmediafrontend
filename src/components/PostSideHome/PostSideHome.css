@@ -1,0 +1,7 @@
+.PostSideHome{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 135vh;
+    overflow: hidden;
+}

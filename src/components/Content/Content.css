@@ -1,0 +1,16 @@
+.Content{
+    position: relative;
+    display: grid;
+    grid-template-columns: 20rem auto 18rem;
+    gap: 1rem;
+}
+@media (max-width:1160px){
+    .Content{
+        grid-template-columns: 20rem auto 0rem;
+    }
+}
+@media (max-width:855px){
+    .Content{
+        grid-template-columns: 0rem auto 0rem;
+    }
+}
