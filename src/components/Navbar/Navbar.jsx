@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Logo from '../../img/brand.png';
-import {UilSearch,UilHome,UilSetting} from '@iconscout/react-unicons';
+import {UilSearch} from '@iconscout/react-unicons';
 import { useSelector } from 'react-redux';
 import {ImCross} from 'react-icons/im';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
-import{AiFillHome,AiFillSetting,AiFillMessage,AiFillPlusCircle} from 'react-icons/ai';
+import{AiFillHome,AiFillPlusCircle} from 'react-icons/ai';
 import {CgProfile} from 'react-icons/cg';
 import {MdLightMode,MdDarkMode} from 'react-icons/md';
 import {IoIosNotifications} from 'react-icons/io';
