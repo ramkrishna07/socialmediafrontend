@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://socialmediabackend-fb91.onrender.com",
+  "proxy": "https://socialmediabackend-ud7p.onrender.com",
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@iconscout/react-unicons": "^1.1.6",
