@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 40rem;
     gap: 4rem;
     position: relative;
 }
@@ -94,7 +94,7 @@
 @media (max-width:917px){
     .Auth{
         display: block;
-        height: 150vh;
+        height: 60rem;
     }
     .a-right{
         margin-top: 5rem;
