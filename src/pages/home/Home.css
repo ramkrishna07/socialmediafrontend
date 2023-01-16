@@ -1,20 +1,5 @@
-/* .Home{
-    position: relative;
-    display: grid;
-    grid-template-columns: 18rem auto 20rem;
-    gap: 1rem;
-}
-@media (max-width:1160px){
-    .Home{
-        grid-template-columns: 18rem auto 0rem;
-    }
-}
-@media (max-width:850px){
-    .Home{
-        grid-template-columns: 0rem auto 0rem;
-    }
-} */
 .Home{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
 }

@@ -17,3 +17,24 @@
 svg{
     color: var(--appcolor);
 }
+
+@media (max-width:932px){
+    .mantine-Paper-root{
+        width: 70%;
+    }
+}
+@media (max-width:733px){
+    .mantine-Paper-root{
+        width: 80%;
+    }
+}
+@media (max-width:600px){
+    .mantine-Paper-root{
+        width: 90%;
+    }
+}
+@media (max-width:511px){
+    .mantine-Paper-root{
+        width: 100%;
+    }
+}

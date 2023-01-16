@@ -5,6 +5,7 @@ const postReducer=(
             case "UPLOAD_START":
                 return {...state,uploading:true,error:false}
             case "UPLOAD_SUCCESS":
+                localStorage.setItem("posts",JSON.stringify({...action?.data}));
                 return {...state,posts: [action.data,...state.posts],uploading:false,error:false}
             case "UPLOAD_FAIL":
                 return {...state,uploading:false,error:true}

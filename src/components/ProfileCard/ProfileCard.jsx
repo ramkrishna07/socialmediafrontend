@@ -1,25 +1,58 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './ProfileCard.css';
 import Cover from '../../img/cover.jpg';
 import Profile from "../../img/profile.png";
 import { useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
+import {FaPencilAlt} from 'react-icons/fa';
+import {IoBriefcase} from 'react-icons/io5';
+import {GiHouse} from 'react-icons/gi';
+import {AiFillHeart} from 'react-icons/ai';
+import ProfileModal from '../ProfileModal/ProfileModal';
+
 const ProfileCard = ({location}) => {
 
+    const [modalOpened,setModalOpened]=useState(false);
     const {user}=useSelector((state)=>state.authReducer.authData)
     const posts=useSelector((state)=>state.postReducer.posts)
     const serverPublic=process.env.REACT_APP_PUBLIC_FOLDER
 
   return (
     <div className='ProfileCard'>
-        <div className="ProfileImages">
+          {location==="profilePage"?(
+               <div className="ProfileImages forprofile">
+               <img src={user.coverPicture? serverPublic + user.coverPicture : Cover} alt="" />
+               <img src={user.profilePicture? serverPublic + user.profilePicture : Profile} alt="" />
+           </div>
+          ):
+          (
+            <div className="ProfileImages">
             <img src={user.coverPicture? serverPublic + user.coverPicture : Cover} alt="" />
             <img src={user.profilePicture? serverPublic + user.profilePicture : Profile} alt="" />
+         </div>
+          )}
+       
+        {location==="profilePage"?(
+            <div className="ProfileName inprofile">
+            <span>{user.firstname} {user.lastname}  {location==="profilePage"? <button onClick={()=>setModalOpened(true)} className=''><FaPencilAlt width='2rem' height='1.2rem'/> Edit Profile</button> :""} 
+                <ProfileModal modalOpened={modalOpened}setModalOpened={setModalOpened} data={user}/></span>
+               
+            <span> <IoBriefcase/> Workd at  {user.worksAt? user.worksAt: "Write about yourself"}</span>
+            {location==="profilePage"? <span><GiHouse/> Lives in {user.livesin}</span>:""}
+            {location==="profilePage"? <span><AiFillHeart/> {user.relationship}</span>:""}
+            
         </div>
-        <div className="ProfileName">
+        ):(
+            <div className="ProfileName">
             <span>{user.firstname} {user.lastname}</span>
-            <span>{user.worksAt? user.worksAt: "Write about yourself"}</span>
+               
+            <span> <IoBriefcase/> Workd at  {user.worksAt? user.worksAt: "Write about yourself"}</span>
+            
         </div>
+        )
+        
+        }
+        
 
         <div className="followStatus">
             <hr />

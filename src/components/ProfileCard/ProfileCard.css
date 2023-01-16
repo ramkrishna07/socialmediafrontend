@@ -14,17 +14,21 @@
     align-items: center;
     justify-content: center;
 }
+
 .ProfileImages>img:nth-of-type(1){
     width: 100%;
 }
 .ProfileImages>img:nth-of-type(2){
     width: 6rem;
+    /* height: 6rem; */
     border-radius: 50%;
     position: absolute;
     bottom: -3rem;
+    /* left: 1rem; */
     box-shadow: var(--profileShadow);
 }
 .ProfileName{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,6 +36,35 @@
 }
 .ProfileName>span:nth-of-type(1){
     font-weight: bold;
+    font-size: larger;
+}
+.forprofile{
+    align-items: flex-start;
+}
+.inprofile{
+    align-items: flex-start;
+    left: 2rem;
+}
+.inprofile button{
+    color: var(--buttonText);
+    border: none;
+    padding: 2px 7px 2px 7px;
+    border-radius: 0.5rem;
+    background: var(--buttonBg);
+    transition: all 100ms ease-out;
+}
+.inprofile button svg{
+    color: white;
+}
+.inprofile button:hover{
+    cursor: pointer;
+    color: var(--orange);
+    background: transparent;
+    border: 2px solid var(--orange);
+    transition: all 0.3s ease;
+}
+.forprofile>img:nth-of-type(2){
+    left: 2rem;
 }
 /* follw status */
 .followStatus{

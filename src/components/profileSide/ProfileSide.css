@@ -6,3 +6,9 @@
     height: 100vh;
     overflow-y: scroll;
 }
+
+@media (max-width:555px){
+    .frnd{
+        padding: 1rem 1rem;
+    }
+}

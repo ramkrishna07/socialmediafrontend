@@ -7,8 +7,11 @@ import { UilSchedule } from "@iconscout/react-unicons";
 import { UilTimes } from "@iconscout/react-unicons";
 import { useDispatch, useSelector } from "react-redux";
 import { uploadImage, uploadPost } from "../../actions/uploadAction";
+import {useMediaQuery} from "@mui/material";
 
 const PostShare = () => {
+  const mobile1=useMediaQuery("(max-width:1228px)");
+  const mobile2=useMediaQuery("(max-width:670px)");
   const loading = useSelector((state) => state.postReducer.uploading);
   const [image, setImage] = useState(null);
   const imageRef = useRef();
@@ -61,25 +64,27 @@ const PostShare = () => {
         <input ref={desc} required type="text" placeholder="What's happening" />
         <div className="postOptions">
           <div
-            className="option"
+            className="Option"
             
             onClick={() => imageRef.current.click()}
           >
             <UilScenery style={{ color: "var(--photo)" }}/>
             Photo
           </div>
-          <div className="option"  onClick={() => imageRef.current.click()}>
+          <div className="Option"  onClick={() => imageRef.current.click()}>
             <UilPlayCircle style={{ color: "var(--video)" }}/>
             Video
           </div>
-          <div className="option" >
+          
+          <div className="Option" >
             <UilLocationPoint style={{ color: "var(--location)" }}/>
             <input type="text" placeholder="location" ref={location}/>
           </div>
-          <div className="option" >
+          <div className="Option" >
             <UilSchedule style={{ color: "var(--shedule)" }}/>
             Shedule
           </div>
+          
           <button
             className="button ps-button"
             onClick={handleSubmit}

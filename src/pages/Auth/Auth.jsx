@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import './Auth.css';
-import Logo from '../../img/brand.png';
+import Logo from '../../img/brand-dark.png';
+import Logo_Light from '../../img/brand-light.png';
 import { logIn, signUp } from '../../actions/AuthAction';
 const Auth = () => {
     const dispatch=useDispatch();

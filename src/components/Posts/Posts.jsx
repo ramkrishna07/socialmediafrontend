@@ -24,7 +24,6 @@ const Posts = ({location}) => {
            "Fetching Posts...":
           //  console.log(params.id)
          posts.map((post,id)=>{
-           console.log(post);
             return <Post data={post} id={id}/>
          })
          }

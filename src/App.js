@@ -5,6 +5,7 @@ import Auth from './pages/Auth/Auth';
 import {Routes,Route,Navigate} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Friend from './pages/Friend/Friend';
+import More from './pages/More/More';
 function App() {
   const user=useSelector((state)=>state.authReducer.authData)
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/auth' element={user? <Navigate to='../home'/>:<Auth/>}/>
         <Route path='/profile/:id' element={user? <Profile/> : <Navigate to="../auth"/>}/>
         <Route path='/friends' element={user? <Friend/> : <Navigate to="../auth"/>}/>
+        <Route path='/more' element={user? <More/> : <Navigate to="../auth"/>}/>
       </Routes>
    </div>
   );

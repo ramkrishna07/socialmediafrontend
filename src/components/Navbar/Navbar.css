@@ -4,7 +4,18 @@
     grid-template-columns: 20rem auto 20rem;
     gap: 1rem;
 }
+
+
+  
+a.active {
+    border-bottom: 3px solid var(--orange);
+    transition: border-bottom .5s ease-in-out;
+  }
+  a.active .icons{
+      color: var(--orange);
+  }
 .LogoSearch{
+    position: relative;
     display: flex;
     gap: 0.75rem;
 
@@ -14,6 +25,7 @@
     width: 6.5rem;
 }
 .Search{
+    position: relative;
     display: flex;
     background-color: var(--inputbg);
     color: var(--inputcolor);
@@ -71,7 +83,7 @@
     width: 1.5rem;
     height: 1.5rem;
     /* color: linear-gradient(106.23deg,#f99827,#f95f35 100%); */
-    color: var(--orange);
+   
     cursor: pointer;
 }
 .plusIcon{
@@ -87,8 +99,17 @@
         gap: 44%;
     }
 }
-
-@media (max-width:670px){
+@media (max-width:775px){
+    .navOptions{
+        gap: 30%;
+    }
+}
+@media (max-width:690px){
+    .navOptions{
+        gap: 15%;
+    }
+}
+ @media (max-width:670px){
     .Search{
         display: none;
     }
@@ -99,32 +120,60 @@
         display: block;
         position: relative;
     }
+    .navOptions{
+        right: 28%;
+    }
     
 }
-@media (max-width:630px){
+@media (max-width:555px){
+    .Navbar{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .LogoSearch{
+        left: 1rem;
+        top: 1rem;
+    }
     .navOptions{
-        gap: 35%;
-        right: 30%;
+        justify-content: space-around;
+        right: 0%;
+    }
+    .plusIcon{
+        margin-left: 0%;
+    }
+   
+    .after input{
+        background-color: var(--inputbg);
+        
     }
 }
-@media (max-width:500px){
+@media (max-width:385px){
+     .Search{
+        transform: scaleX(.9);
+        right: 4%;
+    } 
+    .plusIcon{
+        display: none;
+    }
+}
+@media (max-width:340px){
+    .Search{
+        transform: scaleX(.8);
+        right: 8%;
+    } 
+    .LogoSearch{
+        gap: 0.25rem;
+    }
+    .navOptions{
+        gap: 30px;
+    }
     .plusIcon{
         right: 20%;
     }
-    .navOptions{
-        right: 75%;
-    }
 }
-@media (max-width:440px){
-    
+@media (max-width:320px){
     .navOptions{
-        right: 100%;
-        gap: 15%;
-    }
-}
-@media (max-width:350px){
-    .navOptions{
-        right: 110%;
-        gap: 5%;
+        gap: 15px;
     }
 }
