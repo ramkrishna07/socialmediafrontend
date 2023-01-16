@@ -94,6 +94,7 @@
 @media (max-width:917px){
     .Auth{
         display: block;
+        height: 150vh;
     }
     .a-right{
         margin-top: 5rem;
