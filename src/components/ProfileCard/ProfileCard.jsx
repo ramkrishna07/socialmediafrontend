@@ -1,7 +1,5 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import './ProfileCard.css';
-import Cover from '../../img/cover.jpg';
-import Profile from "../../img/profile.png";
 import { useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
 import {FaPencilAlt} from 'react-icons/fa';
@@ -9,26 +7,38 @@ import {IoBriefcase} from 'react-icons/io5';
 import {GiHouse} from 'react-icons/gi';
 import {AiFillHeart} from 'react-icons/ai';
 import ProfileModal from '../ProfileModal/ProfileModal';
+import { getPost } from '../../api/PostRequest';
 
 const ProfileCard = ({location}) => {
 
     const [modalOpened,setModalOpened]=useState(false);
     const {user}=useSelector((state)=>state.authReducer.authData)
-    const posts=useSelector((state)=>state.postReducer.posts)
+    // const posts=useSelector((state)=>state.postReducer.posts)
+    const [posts,setPosts]=useState([]);
+    const length=posts.filter((post)=>post.userId===user._id).length;
+    console.log(length);
+    useEffect(()=>{
+    const fetchPosts=async()=>{
+      const {data}=await getPost();
+      setPosts(data)
+    };
+    fetchPosts()
+  },[]);
     const serverPublic=process.env.REACT_APP_PUBLIC_FOLDER
 
   return (
     <div className='ProfileCard'>
           {location==="profilePage"?(
                <div className="ProfileImages forprofile">
-               <img src={user.coverPicture? serverPublic + user.coverPicture : Cover} alt="" />
-               <img src={user.profilePicture? serverPublic + user.profilePicture : Profile} alt="" />
+               <img src={serverPublic + user.coverPicture} alt="" />
+               <img src={serverPublic + user.profilePicture} alt="" />
            </div>
           ):
           (
             <div className="ProfileImages">
-            <img src={user.coverPicture? serverPublic + user.coverPicture : Cover} alt="" />
-            <img src={user.profilePicture? serverPublic + user.profilePicture : Profile} alt="" />
+            <img src={serverPublic + user.coverPicture} alt="" />
+            <img src={serverPublic + user.profilePicture} alt="" />
+            
          </div>
           )}
        
@@ -71,7 +81,7 @@ const ProfileCard = ({location}) => {
                     <>
                     <div className="vl"></div>
                     <div className="follow">
-                        <span>{posts.filter((post)=>post.userId===user._id).length}</span>
+                        <span>{length}</span>
                         <span>Posts</span>
                     </div>
                     </>

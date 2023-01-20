@@ -6,6 +6,7 @@
     gap: 1rem;
     overflow-x: clip;
     background: var(--cardColor);
+    width: 100%;
 }
 .ProfileImages{
     position: relative;
@@ -17,15 +18,25 @@
 
 .ProfileImages>img:nth-of-type(1){
     width: 100%;
-}
+    min-height: 10rem;
+    background-image: url(cover-img.jpg);
+    background-size: cover;
+}    
 .ProfileImages>img:nth-of-type(2){
     width: 6rem;
-    /* height: 6rem; */
+    min-height: 7rem;
     border-radius: 50%;
     position: absolute;
     bottom: -3rem;
-    /* left: 1rem; */
     box-shadow: var(--profileShadow);
+    background-image: url(profile.png);
+    background-size: cover;
+   
+}
+.forprofile>img:nth-of-type(1){
+    min-height: 18rem;
+    background-image: url(cover-img.jpg);
+    background-size: cover;
 }
 .ProfileName{
     position: relative;
