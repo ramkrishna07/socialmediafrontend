@@ -1,15 +1,31 @@
 .mantine-Paper-root{
     background-color: var(--appbg);
 }
-.infoForm{
-    background-color: var(--cardColor);
+.infoForm-edit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--appbg);
 }
-.infoForm h3{
+.infoForm-edit>div{
+    display: flex;
+    gap: 1rem;
+    height: 2rem;
+    width: 90%;
+}
+.infoForm-edit h3{
     color: var(--appcolor);
 }
-.infoInput{
+.infoInput-edit{
     background-color: var(--inputbg);
     color: var(--inputcolor);
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;
 }
 .imageInput{
     color: var(--appcolor);
@@ -28,13 +44,21 @@ svg{
         width: 80%;
     }
 }
-@media (max-width:600px){
+@media (max-width:660px){
     .mantine-Paper-root{
         width: 90%;
     }
 }
-@media (max-width:511px){
+@media (max-width:590px){
     .mantine-Paper-root{
         width: 100%;
+    }
+}
+@media (max-width:535px){
+    .infoForm-edit>div{
+        flex-wrap: wrap;
+    }
+    .infoForm-edit>div:nth-child(even){
+        height: 7rem;
     }
 }

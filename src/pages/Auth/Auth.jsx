@@ -34,19 +34,21 @@ const Auth = () => {
             firstname:"",lastname:"",username:"",password:"",confirmpass:""
         });
     }
+
+    const getTheme=localStorage.getItem('Theme');
   return (
     <div className='Auth'>
         {/* left side */}
         <div className="a-left">
             
             <div className="Webname">
-            <img src={Logo} alt="" />
+            {getTheme=="light-theme"?(<img src={Logo} alt="" />):(<img src={Logo_Light} alt="" />)}
                 <h6>Explore the ideas throughout the world</h6>
             </div>
         </div>
         {/* right side */}
         <div className="a-right">
-            <form action="" className='infoForm authForm' onSubmit={handleSubmit}>
+            <form action=""  className={isSignUp?"infoForm authForm":"infoForm authForm login"} onSubmit={handleSubmit}>
 
                 <h3>{isSignUp ? "Sign up":"Log in"}</h3>
 
@@ -71,6 +73,7 @@ const Auth = () => {
                 <div>
                     <span style={{fontSize:"12px",cursor:"pointer",textDecorationLine: "underline"}} onClick={()=>{setIsSignUp((prev)=>!prev); resetForm()}}>{isSignUp ? "Already have an account. Login!": "Don't have an account? Sign Up"}</span>
                 </div>
+                
                 <button className='button infoButton' type='submit' disabled={loading}>{ loading? "Loading..":isSignUp ? "Sign Up": "Log In"}</button>
             </form>
         </div>

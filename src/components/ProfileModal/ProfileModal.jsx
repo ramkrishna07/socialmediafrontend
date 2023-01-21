@@ -71,21 +71,21 @@ function ProfileModal({modalOpened,setModalOpened,data}) {
       opened={modalOpened}
       onClose={()=>setModalOpened(false)}
     >
-     <form className="infoForm">
+     <form className="infoForm-edit">
          <h3>Your info</h3>
          <div>
-           <input type="text" className="infoInput" name='firstname' placeholder='First Name' onChange={handleChange} value={formData.firstname}/>
-           <input type="text" className="infoInput" name='lastname' placeholder='Last Name' onChange={handleChange} value={formData.lastname}/>
+           <input type="text" className="infoInput-edit" name='firstname' placeholder='First Name' onChange={handleChange} value={formData.firstname}/>
+           <input type="text" className="infoInput-edit" name='lastname' placeholder='Last Name' onChange={handleChange} value={formData.lastname}/>
          </div>
          <div>
-         <input type="text" className="infoInput" name='worksAt' placeholder='Works At' onChange={handleChange} value={formData.worksAt}/>
+         <input type="text" className="infoInput-edit" name='worksAt' placeholder='Works At' onChange={handleChange} value={formData.worksAt}/>
          </div>
          <div>
-         <input type="text" className="infoInput" name='livesin' placeholder='Lives In' onChange={handleChange} value={formData.livesin}/>
-         <input type="text" className="infoInput" name='country' placeholder='Country' onChange={handleChange} value={formData.country}/>
+         <input type="text" className="infoInput-edit" name='livesin' placeholder='Lives In' onChange={handleChange} value={formData.livesin}/>
+         <input type="text" className="infoInput-edit" name='country' placeholder='Country' onChange={handleChange} value={formData.country}/>
          </div>
          <div>
-         <input type="text" className="infoInput" name='relationship' placeholder='Relationship Status' onChange={handleChange} value={formData.relationship}/>
+         <input type="text" className="infoInput-edit" name='relationship' placeholder='Relationship Status' onChange={handleChange} value={formData.relationship}/>
          </div>
          <div className='imageInput'>
            Profile Image

@@ -13,11 +13,6 @@ import {FaUserFriends} from 'react-icons/fa';
 import ShareModal from '../ShareModal/ShareModal';
 
 const Navbar = () => {
-  // var theme;
-  // useEffect(()=>{
-  //   document.body.className=theme;
-    
-  // },[theme]);
 
   const mobile=useMediaQuery("(max-width:555px)");
 
@@ -30,12 +25,12 @@ const Navbar = () => {
     setIsShown(current => !current);
   };
 
+  const getTheme=localStorage.getItem('Theme');
   const {user}=useSelector((state)=>state.authReducer.authData)
   return (
     <div className='Navbar'>
     <div className='LogoSearch'>
-      {/* {theme=="light-theme"?(<img src={Logo_Light} alt="" />):(<img src={Logo} alt="" />)} */}
-      <img src={Logo} alt="" />
+      {getTheme=="light-theme"?(<img src={Logo} alt="" />):(<img src={Logo_Light} alt="" />)}
       
       <div className="Search">
         <input type="text" placeholder='#Explore'/>
