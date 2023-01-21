@@ -6,7 +6,10 @@ const Friend = () => {
   return (
     <div className='Friend'>
       <Navbar/>
-      <ProfileSide/>
+      <div className='friends'>
+        <ProfileSide/>
+      </div>
+     
     </div>
   )
 }

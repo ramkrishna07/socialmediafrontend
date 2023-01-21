@@ -18,24 +18,24 @@
 
 .ProfileImages>img:nth-of-type(1){
     width: 100%;
-    min-height: 10rem;
-    background-image: url(cover-img.jpg);
+    min-height: 12rem;
+    background-image: url(nature.jpg);
     background-size: cover;
 }    
 .ProfileImages>img:nth-of-type(2){
     width: 6rem;
-    min-height: 7rem;
+    min-height: 6rem;
     border-radius: 50%;
     position: absolute;
     bottom: -3rem;
     box-shadow: var(--profileShadow);
-    background-image: url(profile.png);
+    background-image: url(profile-dp.jpg);
     background-size: cover;
    
 }
 .forprofile>img:nth-of-type(1){
     min-height: 18rem;
-    background-image: url(cover-img.jpg);
+    background-image: url(nature.jpg);
     background-size: cover;
 }
 .ProfileName{
@@ -121,4 +121,10 @@
     align-self: center;
     margin-bottom: 1rem;
     cursor: pointer;
+}
+
+@media (max-width:555px){
+    .forprofile>img:nth-of-type(1){
+        min-height: 14rem;
+    }    
 }

@@ -2,16 +2,14 @@ import React, { useState, useRef } from "react";
 import "./PostShare.css";
 import { UilScenery } from "@iconscout/react-unicons";
 import { UilPlayCircle } from "@iconscout/react-unicons";
-import { UilLocationPoint,UilHome,UilMore } from "@iconscout/react-unicons";
+import { UilLocationPoint } from "@iconscout/react-unicons";
 import { UilSchedule } from "@iconscout/react-unicons";
 import { UilTimes } from "@iconscout/react-unicons";
 import { useDispatch, useSelector } from "react-redux";
 import { uploadImage, uploadPost } from "../../actions/uploadAction";
-import {useMediaQuery} from "@mui/material";
+import imageCompression from "browser-image-compression";
 
 const PostShare = () => {
-  const mobile1=useMediaQuery("(max-width:1228px)");
-  const mobile2=useMediaQuery("(max-width:670px)");
   const loading = useSelector((state) => state.postReducer.uploading);
   const [image, setImage] = useState(null);
   const imageRef = useRef();
@@ -20,12 +18,29 @@ const PostShare = () => {
   const location=useRef();
   const { user } = useSelector((state) => state.authReducer.authData);
   const serverPublic=process.env.REACT_APP_PUBLIC_FOLDER
+  const onImageChange = async (event) => {
+      if (event.target.files && event.target.files[0]) {
+        const imageFile = event.target.files[0];
+        // console.log('originalFile instanceof Blob', imageFile instanceof Blob); // true
+        // console.log(`originalFile size ${imageFile.size / 1024 / 1024} MB`);
 
-  const onImageChange = (event) => {
-    if (event.target.files && event.target.files[0]) {
-      let img = event.target.files[0];
-      setImage(img);
-    }
+        const options = {
+          maxSizeMB: .5,
+          // maxWidthOrHeight: 1920,
+          useWebWorker: true
+        }
+        try {
+          const img = await imageCompression(imageFile, options);
+          // console.log('img instanceof Blob', img instanceof Blob); // true
+          // console.log(`img size ${img.size / 1024 / 1024} MB`); 
+          setImage(img);
+        } catch (error) {
+          console.log(error);
+        }
+       
+      }
+
+    
   };
 
   // reseting the image and caption after share

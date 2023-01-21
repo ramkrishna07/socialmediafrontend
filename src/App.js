@@ -1,17 +1,53 @@
 import './App.css';
+import { useEffect ,useState} from 'react';
 import Home from './pages/home/Home';
 import Profile from './pages/Profile/Profile';
 import Auth from './pages/Auth/Auth';
-import {Routes,Route,Navigate} from 'react-router-dom';
+import {Routes,Route,Navigate,useLocation} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Friend from './pages/Friend/Friend';
 import More from './pages/More/More';
+import {MdLightMode,MdDarkMode} from 'react-icons/md';
+
 function App() {
   const user=useSelector((state)=>state.authReducer.authData)
+
+  // adding light and dark mode functionality
+  const [theme,setTheme]=useState("light-theme");
+  const toggleTheme=()=>{
+    theme==="dark-theme" ? setTheme("light-theme") : setTheme("dark-theme");
+    localStorage.setItem('Theme',theme);
+
+  }
+
+const getTheme=localStorage.getItem('Theme');
+const location = useLocation();
+ useEffect(() => {
+  if(getTheme==="light-theme"){
+    setTheme("dark-theme");
+  }else{
+    setTheme("light-theme");
+  }
+}, [location]);
+window.addEventListener("load",()=>{
+  if(getTheme==="light-theme"){
+    setTheme("dark-theme");
+  }else{
+    setTheme("light-theme");
+  }
+})
+
+
+useEffect(()=>{
+  document.body.className=theme;
+  
+},[theme]);
+
   return (
     
     <div className='App'>
       <div className="blur" style={{top:'-18%',right:'0'}}></div>
+      <div className='style-switcher' onClick={()=>toggleTheme()}><div>{theme=="light-theme"? (<MdDarkMode/>):(<MdLightMode/>)}</div></div>
       <div className="blur" style={{top:'36%',left:'-8rem'}}></div>
       <Routes>
         <Route path='/' element={user? <Navigate to="home"/>:<Navigate to ='auth'/>}/>

@@ -11,7 +11,7 @@ const Posts = ({location}) => {
 
   const dispatch=useDispatch()
   const {user}=useSelector((state)=>state.authReducer.authData)
-  let {pots,loading}=useSelector((state)=>state.postReducer)
+  let {Posts,loading}=useSelector((state)=>state.postReducer)
   const params=useParams();
   const [posts,setPosts]=useState([]);
   // useEffect(()=>{

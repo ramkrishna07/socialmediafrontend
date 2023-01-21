@@ -3,3 +3,12 @@
     flex-direction: column;
     gap: 1rem;
 }
+.friends{
+    width: 70%;
+    align-self: center;
+}
+@media (max-width:555px){
+    .friends{
+        width: 100%;
+    }
+}
